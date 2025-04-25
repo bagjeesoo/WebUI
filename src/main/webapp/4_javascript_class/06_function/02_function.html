@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>리터럴 함수</title>
+</head>
+<body>
+	<script>
+
+	//***** [결론] 우리는 함수 선언을 호출 전에 하자
+	
+	// [ 호이스팅 개념을 모르는 경우 ]
+	// @ function 명령은 정적인 구조이고, 
+	// @ 함수리터럴과 화살표함수는 실행시 판단한다.
+
+	/*
+		호이스팅(hoisting:끌어올리다)
+		
+		-> 함수 선언문은 선언부가 뒤에 있어도 호이스팅이 되지만
+			함수 리터럴은 뒤에 있으면 호이스팅이 되지 않아서 에러 발생
+	*/
+	
+	
+/* 	document.writeln('2. 삼각형의 면적은 :' +  triangle(4,3) + '<br/>');  //호이스팅이 되서 정상 실행
+	
+	function triangle ( base, height ){
+		return base * height / 2;
+	} */
+	
+	
+/* 	
+	document.writeln('4. 삼각형의 면적은 2: ' +  triangle2(4,3) + '<br/>'); // 호이스팅이 안됨	에러발생
+
+	var triangle2 = function( base, height ){
+		return base * height / 2;
+	}	
+	 */
+	
+	
+	
+	// @ 함수는 데이터형의 일종이다. => 함수가 변수의 값이다.*****
+/* 	
+	var triangle = function( base, height ){   // var를 const로 바꾸면 아래의 문자로전환, 1004로 변환안됨
+		return base * height / 2;
+	}	
+	document.writeln('4. 삼각형의 면적은 2: ' +  triangle(4,3) + '<br/>');
+	
+	document.writeln(`${triangle} <hr/>`);  // 찍어보면 triangle 변수에 함수 코딩이 들어 있음
+	
+	triangle='문자로전환';
+	document.writeln(`${triangle} <hr/>`);  //문자로전환 출력됨
+	
+	triangle=1004;
+	document.writeln(`${triangle} <hr/>`);  //1004 출력됨
+	 */
+	 
+	 
+	/*  
+	 function doA(){
+		document.write(' 함수 A <br/>');
+	}
+	 
+	 function doB(){
+		document.write(' 함수 B <br/>');
+	}
+	 
+	 var arr = [doA, doB];
+	 console.log(arr);      // 콘솔창에 [f,f]로 나옴
+	 
+	 arr[0](); // doA();와 같다
+	  */
+	 
+	 // 함수가 인자도 될 수 있다
+/* 	 
+	 function f4(x,y,z){
+		 return z(x()+y());
+	 }
+	 
+	 let f1 = function(){ return 2;}
+	 let f2 = function(){ return 1;}
+	 let f3 = function(a){ return a*a;}
+ 	 let result = f4(1, 2, 3);          //  f4의 x와 y에 함수가 들어가야해서 오류
+	 document.write(`결과: ${result}`); 
+	 
+	 let result2 = f4(f1, f2, f3);
+	 document.write(`결과: ${result2}`);
+	  
+	 */
+	 
+	 function f4(x,y,z){
+		 return z(x()+y());
+	 }
+	 
+	 let result2 = f4(function(){ return 2;}
+	 				, function(){ return 1;}
+	 				, function(a){ return a*a;});
+	 
+	 document.write(`결과: ${result2}`);
+	 
+	</script>
+</body>
+</html>

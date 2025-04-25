@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="ko-kr">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>성심당 베이커리</title>
+
+  <!-- Bootstrap -->
+  <link href="./css/nomalize.css" rel="stylesheet">
+  <link href="./css/bootstrap.min.css" rel="stylesheet">
+  <link href="./css/style_hw.css" rel="stylesheet">
+  <link href="./css/animate.css" rel="stylesheet">
+  <link href="./css/jquery.fancybox.css" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #fffaf2 !important;
+    }
+
+    .background-layer {
+      background-image: url("imgs/bakeryhouse1.jpg");
+      background-size: cover;
+      background-position: center;
+      opacity: 0.3;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    .bakery-logo {
+      max-width: 600px;
+      margin: 50px auto 30px;
+      display: block;
+    }
+
+    .slogan-section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 0;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .slogan-logo img {
+      max-width: 300px;
+      height: auto;
+    }
+
+    .slogan-text {
+      font-size: 1.6em;
+      font-weight: 600;
+      color: #4b2e13;
+      line-height: 1.8;
+      margin-left: 60px;
+    }
+
+    .slogan-text ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+
+    .slogan-text li {
+      margin-bottom: 12px;
+    }
+
+    .slogan-text strong {
+      color: #d35400;
+      font-weight: 800;
+    }
+
+    .bread-tabs img {
+      width: 100%;
+      max-width: 420px;
+      height: auto;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: 16px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+      display: none; /* 처음에 안 보이도록 */
+      margin: 0 auto;
+      background-color: #fffaf2;
+      padding: 12px;
+    }
+
+    .bread-tabs h3 {
+      margin-top: 20px;
+    }
+
+    .panel-group .panel {
+      background-color: #fffaf2;
+      border: 1px solid #e2c8a4;
+      border-radius: 8px;
+      box-shadow: none;
+      margin-bottom: 10px;
+    }
+
+    .panel-heading {
+      background-color: #fffaf2 !important;
+      border-bottom: none;
+    }
+
+    .panel-title a {
+      background-color: #fffaf2 !important;
+      border: 1px solid #e2c8a4;
+      color: #5c3a1a;
+      font-weight: bold;
+      transition: background 0.3s;
+      display: block;
+      padding: 10px;
+    }
+
+    .panel-title a:hover {
+      background-color: #fcebdc !important;
+    }
+
+    .panel-body {
+      background-color: #fffaf2 !important;
+      border-top: none;
+      color: #4b2e15;
+    }
+
+    .bread-title {
+      margin-left: 30px;
+      font-weight: bold;
+      font-size: 24px;
+      color: #5c3a1a;
+    }
+    .about.page .navbar,
+	.about.page .navbar-collapse,
+	.about.page .navbar-nav  {background-color:#000;}
+	.about.page .navbar-default .navbar-nav>li>a {color:#fff;}
+    .about.page .navbar-brand img {width:160px;}
+  </style>
+</head>
+<!-- 스타일 끝  -->
+<body class="about page" id="home" data-spy="scroll" data-target="#navbar-scroll" data-offset="50">
+
+  <div class="container-fluid">
+    <div class="container">
+      <!-- 네비게이션 바 -->
+      <nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="navbar-scroll">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-1-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><img src="./imgs/logo.svg" alt="9PixelStudio"> </a>
+          </div>
+          <div class="collapse navbar-collapse navbar-right navbar-1-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="index.html"> 홈 </a></li>  
+              <li><a href="about.html"> 제과점소개 </a></li>  
+              <li><a href="product.html"> 판매상품 </a></li>  
+              <li><a href="contact.html"> Contact Us </a></li>   
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <div id="about"></div>
+    <header class="content1">
+      <div class="container">
+        <h1><small>00빵집은 위생수칙 준수를 생활화합니다</small></h1>
+        <p></p>
+      </div>
+    </header>
+
+
+
+<!--                                      여기부터 시작                                   -->
+<!--                                                                                  -->
+
+
+
+
+
+    <!-- 슬로건 -->
+    <div class="slogan-section">
+      <div class="slogan-logo">
+        <img src="imgs/bak.png" alt="Bakery Logo">
+      </div>
+      <div class="slogan-text">
+        <p>&lt;우리 <strong>가게이름</strong>의 철칙&gt;</p>
+        <p>위생과 신선도를 <strong>최우선</strong>으로 삼습니다</p>
+        <p>고객과의 <strong>소통</strong>을 가장 중시합니다</p>
+        <p>먹고 나서도 <strong>여운</strong>이 남는 빵을 만듭니다</p>
+      </div>
+    </div>
+    <hr>
+
+    <!-- 베스트 3 빵 영역 -->
+    <div class="bread-tabs">
+      <div class="row">
+        <!-- 왼쪽: 빵 어코디언 -->
+        <div class="col-md-6">
+          <h3 class="bread-title">&lt;대표메뉴&gt;</h3>
+          <div class="panel-group" id="accordion">
+            <div class="panel">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#accordion" href="#bread1" data-img="imgs/anbread1.png">
+                  	<img src="imgs/anbread1.png" alt="" />
+                    <span class="glyphicon glyphicon-cutlery"></span> 단팥빵
+                  </a>
+                </h4>
+              </div>
+              <div id="bread1" class="panel-collapse collapse">
+                <div class="panel-body">속까지 알찬 전통 단팥빵!</div>
+              </div>
+            </div>
+
+            <div class="panel">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#accordion" href="#bread2" data-img="imgs/soborobread1.jpg">
+                  	<img src="imgs/soborobread1.jpg" alt="" />
+                    <span class="glyphicon glyphicon-cutlery"></span> 소보루빵
+                  </a>
+                </h4>
+              </div>
+              <div id="bread2" class="panel-collapse collapse">
+                <div class="panel-body">바삭한 소보루와 부드러운 식감의 콜라보!</div>
+              </div>
+            </div>
+
+            <div class="panel">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#accordion" href="#bread3" data-img="imgs/melonbread1.png">
+                  	<img src="imgs/melonbread1.png" alt="" />
+                    <span class="glyphicon glyphicon-cutlery"></span> 메론빵
+                  </a>
+                </h4>
+              </div>
+              <div id="bread3" class="panel-collapse collapse">
+                <div class="panel-body">겉바속촉 달콤한 메론빵!</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+        <!-- 오른쪽: 이미지 미리보기 -->
+        <div class="col-md-6">
+          <img id="bread-image" src="" alt="빵 이미지" class="img-responsive center-block" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+  <!-- JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="./js/bootstrap-hover-dropdown.js"></script>
+  <script src="./js/animatescroll.min.js"></script>
+  <script src="./js/simpleparallax.js"></script>
+  <script src="./js/waypoints.min.js"></script>
+  <script src="./js/jquery.fancybox.js"></script>
+
+
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const breadImage = document.getElementById("bread-image");
+      const accordion = document.getElementById("accordion");
+
+      
+      accordion.addEventListener("click", function (event) {
+    	  
+    	  
+        const link = event.target.closest("a");
+        
+        if (link && link.hasAttribute("data-img")) {
+        	
+          const imgSrc = link.getAttribute("data-img");
+          breadImage.setAttribute("src", imgSrc);
+          breadImage.style.display = "block"; 
+          
+          
+          
+        }
+        
+      });
+      
+    });
+  </script>
+</body>
+</html>

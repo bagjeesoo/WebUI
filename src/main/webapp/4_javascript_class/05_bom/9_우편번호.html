@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> 우리사이트 회원가입</title>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script type="text/javascript">
+window.onclick=function(){
+	document.querySelector('#btn_search').onclick=function(){
+		new daum.Postcode({
+	        oncomplete: function(data) {
+	            // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분입니다.
+	            // 예제를 참고하여 다양한 활용법을 확인해 보세요.
+	            document.querySelector('#addr').value = data.address;
+	            
+	        }
+	    }).open();
+	}
+}
+
+</script>
+</head>
+<body>
+
+<div>주소를 입력합니다.</div>
+
+<input type='text' id='addr' readonly> <input type='button' id='btn_search' value='주소찾기'>
+
+</body>
+</html>

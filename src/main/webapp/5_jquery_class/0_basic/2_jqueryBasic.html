@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8"/>
+	<title> 첫 연습 </title>
+<style type="text/css">
+	.active{    /* 없는 클래스 많듦 */
+		border: 3px solid red;   
+		outline : 3px solid red;		
+	}
+</style>
+<script type="text/javascript" src='../lib/jquery-3.7.1.js'></script>
+<script type="text/javascript">
+
+$(function(){
+	
+	//[1]----------------------------
+	$('ul>.woman').css({'background': 'lightblue'});
+	$('ul>li.man').css({'font-size':'30px'});
+	
+	//[2]------------------------------
+	let redBox = $('input.inputText');
+	redBox.focus(function(){
+		$(this).addClass('active');   // 직접 만든 클래스 더해주기
+	});
+	
+	
+	// focus <-> blur
+	redBox.blur(function(){
+		$(this).removeClass('active');
+	});
+	
+	//[3]-------------------------------
+	/*
+		자바스크립트 : innerHTML
+		제이쿼리 : text() / html()
+		
+		[*]제이쿼리 특징 : setter와 getter 동일하다
+			
+			함수(인자) : setter
+			함수()	: getter
+		
+		[*] attr( 속성명, 속성값) : setter
+			attr(속성명) 		 : getter
+			
+			ex) attr('type', 'checkbox') => 변경(setter)
+				attr('type') 			 => 얻어오기(getter)
+	*/
+	
+	//alert($('#divText').text());
+	//$('#divText').text("변경합니다");
+	
+	$('#divText').text('<img src="images/grim.jpg" />');
+	
+	$('#divHtml').html('<img src="images/grim.jpg" />');
+	
+	$('#divEmpty').empty();
+	
+	//현재 강아지 그림을 클릭하면 고양이 그림으로 변경
+	//img에서 src 속성의 값을 고양이로 변경
+	
+	$('#changeGrim').click(function(){
+		//ch.attr('src', 'images/cat.jpg');
+		
+	//alert($(this).attr('src').replace('puppy', 'cat'));
+	$(this).attr('src', $(this).attr('src').replace('puppy', 'cat'));
+	})
+	
+	//[4]-------------------------------------------
+	/*
+		<div>태그사이의 값</div>  : text() / html()
+		<input value='벨류값'> : val()
+		
+	*/
+	$('#check').click(function(){
+		let name = $('#tf').val();
+		let ta = $('#ta').val();
+		let city=$('#sel').val();
+		let isl = $('#sel_m').val();
+		
+		alert(`이름: ${name}\n 메세지: ${ta}\n 도시: ${city}\n 섬: ${isl}` );
+	})
+	
+	$('#init').click(function(){
+		$('#tf').val("이름을 입력하세요");
+		$('#ta').val("오늘도 행복하세요");
+		$('#sel').val('busan');
+		$('#sel_m').val(['제주도','거제도']);
+	})
+	
+	//[6]-----------------------------------
+	/* $('.data').click(function(){
+		alert($(this).text()); 
+	}) */
+	
+	$('.data').each(function(){  // 옛날 코드
+		$(this).click(function(){
+			//alert($(this).text())
+			//alert(this.innerHTML);  // 자바스크립트 코드
+		})
+	})
+	
+	//[5]----------------------------------
+	// 		태그의 부모/자식 관계
+	//		- 부모.append(자식)
+	//		- 자식.appendTo(부모)
+	
+	let actor = $('#actor');
+	let tae = $('#tae');
+	let su = $('#su');
+	let bin = $('#bin');
+	
+	actor.append(tae);
+	su.appendTo(actor);
+	
+	actor.append('<div>한배우</div>');
+	$('<div>홍길동</div>').appendTo(actor);
+	
+	var n = $('<dav/>'); // <div></div>
+	n.text('두배우');  // <div>두배우</div>
+	
+	actor.append(n);
+	
+	/*  *****************************
+		 var n = $('#div'); // 화면에 <요소 id ='div'>
+		 var n = $('.div'); // 화면에 <요소 class = 'div'>
+		 var n = $('div'); // 화면에 <div></div>
+		 
+		 var n = $('<div/>'); // div 새로운 객체
+		 var n = $('<div></div>');
+	*/
+	
+})
+
+</script>
+</head>
+<body>
+	<!--  1 -->
+	<ul>
+		<li class="man">김수현</li>
+		<li class="woman">김희애</li>
+		<li class="woman">송혜교</li>
+		<li class="man">하정우</li>
+		<li class="woman">김태희</li>
+	</ul>
+	<!-- 2 -->
+	<input type="text" class="inputText"/>
+	<input type="text" class="inputText"/>
+	<input type="text" class="inputText"/>
+	
+
+	<!-- 3 -->
+		<div id="divText">여기에 글씨를</div>
+		<div id="divHtml">여기에 그림을</div>
+		<div id="divEmpty">여기를 비움</div>
+		<p>
+		<img src="images/puppy.jpg" id='changeGrim'>
+		</p>
+		
+	<!-- 4 -->	
+		<p>
+		이름 : <input id="tf" type="text" size="20" /><br/>
+		메세지 : <textarea id="ta" rows="3" cols="20"></textarea><br/>
+		주소 : <select id="sel">
+			<option value="seoul">서울</option>	<!-- option에 value 값 없어도 됨 -->
+			<option value="busan">부산</option>
+			<option value="masan">마산</option>
+			<option value="incheon">인천</option>
+		</select>
+		<select id="sel_m" multiple="multiple">
+			<option >제주도</option>
+			<option >울릉도</option>
+			<option >독도</option>
+			<option >거제도</option>
+		</select><br/>
+		<input type='button' id='check' value='확인'/>
+		<input type='button' id='init' value='초기화'/> 
+		<div id='result'></div>
+		</p>
+		
+	<!-- 5 -->
+		<div id="actor">배우</div>
+		<div id="tae">김태희</div>
+		<div id="su">김수현</div>
+		<div id="bin">현빈</div>
+
+
+	<!-- 6 -->
+		<div class="data">이름</div>
+		<div class="data">직업</div>
+		<div class="data">나이</div>
+
+	
+</body>
+</html>

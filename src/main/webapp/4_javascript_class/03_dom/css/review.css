@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+body {
+	display : flex;
+	flex-direction : column;
+	align-items : center;
+	justify-content : center;
+}
+div#profile {
+	display : flex;
+	flex-direction : row;
+	justify-content : center;
+	align-items : center;
+}
+
+h3{
+	color : blue;
+}
+
+img {
+	border : 2px solid lightgray;
+	width  : 100px;
+	height : 100px;
+	margin : 50px;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+
+/* table{border:2px dotted blue;}
+
+td{border:1px dotted yellow;}
+
+table tr:hover{background:aliceblue;}
+
+tr:nth-child(even){background: orange;}
+ */
+ 
+ table{border:3px solid pink;}
+ 
+ 
+ 
+ tr:nth-child(even){background:#11FF55;}
+ tr:nth-child(odd){background:#117766;}
+ 
+ tr:first-of-type{background: #3580FF; font: 20px 궁서;}
+ table td:hover {background:pink;}
+ 
+/*
+	CSS : index를 1부터 센다
+	
+	JS : 인덱스를 0부터 센다(자바스크립트는 프로그램 언어라서)
+*/
+
+</style>
+
+</head>
+<body>
+	<table border = '2'>
+		<tr>
+			<td colspan = '2'><b>부서명</b></td>
+			<td><b>전화번호(02+)</b></td>
+			<td><b>팩스번호(02+)</b></td>
+		</tr>
+		<tr>
+			<td colspan='2'>종합상황실</td>
+			<td>123-1001~1005</td>
+			<td>321-1001</td>
+		</tr>
+		<tr>
+			<td rowspan='2'>비서실</td>
+			<td>비서실장</td>
+			<td>123-1111</td>
+			<td rowspan='2'>321-1002(사장)<br/>321-1003(감사)</td>
+		</tr>
+		<tr>			
+			<td>비서실</td>
+			<td>123-1112(사장)<br/>123-1113(감사)</td>
+		</tr>
+		<tr>
+			<td rowspan='3'>홍보실</td>
+			<td>홍보실장</td>
+			<td>123-1001</td>
+			<td rowspan=3'>321-1101</td>
+		</tr>
+		<tr>
+			<td>홍보부</td>
+			<td>123-2001~123-2009</td>
+		</tr>
+		<tr>
+			<td>국제협력부</td>
+			<td>123-1230~1234</td>
+		</tr>
+	
+	</table>
+</body>
+</html>

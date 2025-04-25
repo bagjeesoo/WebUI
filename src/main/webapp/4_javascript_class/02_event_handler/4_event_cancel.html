@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> 이벤트 처리 취소</title>
+
+<style type="text/css">
+
+#outer{background: green;}
+#inner{background: pink;}
+
+</style>
+
+<script>
+	/* 버블링 : 이벤트의 부모요소에 전달되는 단계
+	
+			- stopPropagation() : 이벤트 전달 취소
+			- preventDefault() : 이벤트 본래의 동작 취소
+	*/
+	
+	window.onload=function(){
+		let in1 = document.getElementById('inner');
+		in1.onclick=function(evt){  // 인자에 이벤트를 넣어준다(자바스크립트는 안넣어줘도 동작되지만 )
+			evt.stopPropagation();
+			evt.preventDefault();
+			alert("안쪽 눌림")
+		}
+		
+		let outer = document.getElementById('outer');
+		outer.onclick = function(e){
+			
+			alert('바깥쪽 눌림')
+		}
+	}
+
+
+</script>
+</head>
+<body>
+	<div id='outer'>
+		<p>바깥 부분</p>
+		<div id='inner'>
+			<a href='http://www.nate.com'>안쪽부분</a>
+		</div>
+	</div>
+</body>
+</html>

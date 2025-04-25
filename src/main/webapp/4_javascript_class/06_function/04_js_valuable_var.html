@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>자바스크립트 변수와 범위</title>
+	<script>
+
+	// #1. 글로벌변수와 지역변수
+/* 	var scope = '글로벌변수';
+	function getValue(){
+		var scope = '지역변수';
+		return scope;
+	}
+	
+	document.write(`1> ${getValue()} </br>`); // 지역변수
+	document.write(`2> ${scope}`); // 글로벌변수  */
+	
+	// #2. var 명령어 생략시 => 모든 변수를 글로벌변수로 취급
+	/* 
+	scope = '글로벌변수';
+	function getValue(){
+		scope = '지역변수';
+		var test = '테스트';
+		return scope;
+	}
+	
+	document.write(`1> ${getValue()} </br>`); // 지역변수
+	document.write(`2> ${scope} </br>`); // 지역변수 
+	document.write(`3> ${test}`);  // var를 붙이면 function에서만 사용되는 지역변수
+	 */
+	 
+	/*  
+	// #3. 지역변수 선언을 함수 맨 앞에 쓰자
+	var scope = '글로벌변수';
+	function getValue(){
+		
+		document.write(`0> ${scope} </br>`); // 함수 내에서 호출 전에 지정이 안되서 undefined
+		var scope = '지역변수';
+		
+		return scope;
+	}
+	
+	document.write(`1> ${getValue()} </br>`); // 지역변수
+	document.write(`2> ${scope}`); // 글로벌변수
+	  */
+	 
+	 // #4. 지역변수의 범위 -> 함수 안에만 지역변수다
+	 if(true){
+		 var i = 100;
+	 }
+	
+	document.write(`i= ${i} <br/>`); // if안에 변수가 선언되어도 전역변수(자바랑 다름) 
+	
+	for(var j=0; j<3; j++){}
+	for(var j=0; j<3; j++){}
+	document.write(`j= ${j} <br/>`);  // for에서 선언되어도 밖에서 잘나옴
+	
+	
+	
+	
+	</script>
+</head>
+
+<body>
+
+  
+ </body>
+</html>

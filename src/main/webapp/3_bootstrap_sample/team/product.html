@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="ko-kr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>성심당 베이커리</title>
+
+    <!-- Bootstrap -->
+    <link href="./css/nomalize.css" rel="stylesheet">
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+    <link href="./css/animate.css" rel="stylesheet">
+    <link href="./css/jquery.fancybox.css" rel="stylesheet">
+	<script>
+	window.onload = function(){
+		var slideLinks = document.querySelectorAll('.thumbnail .fancybox');
+		
+		slideLinks.forEach(function(slideLink){
+			slideLink.onclick = function(e){
+				e.preventDefault();
+				//alert('이벤트삭제')
+			}
+		})
+	}
+	</script>
+
+	
+  </head>
+<body id="home" class="sec_pro" data-spy="scroll" data-target="#navbar-scroll" data-offset="50">
+  <div class="container-fluid"  >     
+        <div class="container">
+          <nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="navbar-scroll">
+            <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#"><img src="./imgs/logo.svg" alt="성심당"> </a>
+            </div>
+           
+             <!-- 네비게이션 메뉴 -->
+            <div class="collapse navbar-collapse navbar-right navbar-1-collapse">
+              <ul class="nav navbar-nav">
+              <li><a href="index.html"> 홈 </a></li>  
+              <li><a href="about.html"> 제과점소개 </a></li>  
+              <li><a href="product.html"> 판매상품 </a></li>  
+              <li><a href="contact.html"> Contact Us </a></li>                  
+              </ul>
+            </div>
+            </div>
+            </div><!-- /.navbar-collapse -->
+          </nav>
+        </div>   
+        
+       <div  id="portfolio"></div>  <!-- 포트폴리오 시작 -->
+         <div class="content2"> 
+          <header>
+                <div class="container">
+                    <h1><small>판매상품</small></h1>
+                    <p>대전의 대표 성심당의 대표메뉴들입니다.</p>
+                </div><!-- end .container -->
+         </header>
+       </div>
+         <div class="container portfolio  wp4 delay-05s" >
+            <h2 class="sans">성심당 대표제품</h2>
+              <div id="carousel-generic" class="carousel2 slide" >
+	              <div class="carousel-inner">
+	                <div class="item active">
+	                   <div class="row"> <!-- 슬라이드 one --> 
+	                        <div class="col-xs-3 col-md-3">
+	                         <div class="thumbnail site">
+	                            <a class="fancybox" rel="gallery1" href="./imgs/portfolio/빵1.png"><img src="./imgs/portfolio/빵1.png" alt="..."></a>
+	                            
+	                          </div>
+	                        </div>
+	                        <div class="col-xs-3 col-md-3">
+	                         <div class="thumbnail site">
+	                            <a class="fancybox" rel="gallery1" href="./imgs/portfolio/빵2.png"><img src="./imgs/portfolio/빵2.png" alt="..."></a>
+	                           
+	                          </div>                                 
+	                        </div>
+	                        <div class="col-xs-3 col-md-3">
+	                         <div class="thumbnail site">
+	                            <a class="fancybox" rel="gallery1" href="./imgs/portfolio/빵3.png"><img src="./imgs/portfolio/빵3.png" alt="..."></a>
+	                            
+	                          </div>                          
+	                                      
+	                        </div>
+	                        <div class="col-xs-3 col-md-3">
+	                         <div class="thumbnail site">
+	                          <a class="fancybox" rel="gallery1" href="./imgs/portfolio/빵4.png">
+	                            <img src="./imgs/portfolio/빵4.png" alt="...">
+	                          </a>  
+	                          </div>                          
+	                         
+	                        </div>
+	                   </div> <!-- 슬라이드 one end --> 
+	                </div>
+	                <div class="item">
+	                   <div class="row"> <!-- 슬라이드 one --> 
+	                        <div class="col-xs-3 col-md-3">
+	                         <div class="thumbnail site">
+	                          <a class="fancybox" rel="gallery1" href="./imgs/portfolio/빵5.png">
+	                            <img src="./imgs/portfolio/빵5.png" alt="...">
+	                           </a> 
+	                          </div>
+	                        </div>
+	                        <div class="col-xs-3 col-md-3">
+	                         <div class="thumbnail site">
+	                          <a class="fancybox" rel="gallery1" href="./imgs/portfolio/빵6.png">
+	                            <img src="./imgs/portfolio/빵6.png" alt="...">
+	                          </a>  
+	                          </div>                                 
+	                        </div>
+	                        <div class="col-xs-3 col-md-3">
+	                         <div class="thumbnail site">
+	                          <a class="fancybox" rel="gallery1" href="./imgs/portfolio/빵7.png">
+	                            <img src="./imgs/portfolio/빵7.png" alt="...">
+	                          </a>  
+	                          </div>     
+	                        </div>
+	                        <div class="col-xs-3 col-md-3">
+	                         <div class="thumbnail site">
+	                          <a class="fancybox" rel="gallery1" href="./imgs/portfolio/빵8.png">
+	                            <img src="./imgs/portfolio/빵8.png" alt="...">
+	                           </a> 
+	                          </div> 
+	                        </div>
+	                   </div> <!-- 슬라이드 one end -->
+	                </div>              
+	              </div>
+	              <!-- Controls -->
+	              <div class="slide-controls">
+		              <a class="left" href="#carousel-generic" data-slide="prev">
+		                <span class="icon-prev"></span>
+		              </a>
+		              <a class="right" href="#carousel-generic" data-slide="next">
+		                <span class="icon-next"></span>
+		              </a>
+	              </div>
+              </div>
+           <h2 class="sans">성심당 건강빵 제품</h2>  
+           <div class="row">
+             <div class="col-xs-3 col-md-3">
+                <div class="thumbnail">
+                  <a class="fancybox" rel="gallery2" href="./imgs/portfolio/빵9.png">
+                   <img src="./imgs/portfolio/빵9.png" alt="">
+                  </a> 
+                </div> 
+             </div>
+             <div class="col-xs-3 col-md-3">
+                <div class="thumbnail">
+                  <a class="fancybox" rel="gallery2" href="./imgs/portfolio/빵10.png">
+                   <img src="./imgs/portfolio/빵10.png" alt="">
+                  </a> 
+                </div>  
+             </div>
+             <div class="col-xs-3 col-md-3">
+              <div class="thumbnail">
+                <a class="fancybox" rel="gallery2" href="./imgs/portfolio/빵11.png">
+                  <img src="./imgs/portfolio/빵11.png" alt="">
+                </a>
+              </div>  
+             </div>
+             <div class="col-xs-3 col-md-3">
+              <div class="thumbnail">
+                <a class="fancybox" rel="gallery2" href="./imgs/portfolio/빵12.png">
+                  <img src="./imgs/portfolio/빵12.png" alt="">
+                </a>
+              </div>  
+             </div>
+           </div>  
+         </div>  <!-- portfolio end-->
+        
+
+      <footer class="content3">
+        <div class="container">
+          COPYRIGHT© SUNG SIM DANG Co.,Ltd. ALL RIGHT RESERVED.
+        </div>
+      </footer>
+  
+</div> <!--  fluid container 끝 -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/bootstrap-hover-dropdown.js"></script>
+    <script src="./js/animatescroll.min.js"></script>
+    <script src="./js/simpleparallax.js"></script>
+    <script src="./js/waypoints.min.js"></script>
+    <script src="./js/jquery.fancybox.js"></script>
+    <script>
+		$('.carousel').carousel()
+       	$('.carousel2').carousel({interval: 3000 }) 
+
+        //***************** Waypoints ******************
+        
+          $('.wp1').waypoint(function() {
+            $('.wp1').addClass('animated fadeInLeft');
+          }, {
+            offset: '75%'
+          });
+          $('.wp2').waypoint(function() {
+            $('.wp2').addClass('animated fadeInUp');
+          }, {
+            offset: '75%'
+          });        
+          $('.wp3').waypoint(function() {
+            $('.wp3').addClass('animated fadeInDown');
+          }, {
+            offset: '55%'
+          });
+          $('.wp4').waypoint(function() {
+            $('.wp4').addClass('animated fadeInDown');
+          }, {
+            offset: '75%'
+          });
+          $('.wp5').waypoint(function() {
+            $('.wp5').addClass('animated fadeInRight');
+          }, {
+            offset: '75%'
+          });
+          /*
+     $(document).ready(function() {
+        $(".fancybox").fancybox({
+          openEffect  : 'none',
+          closeEffect : 'none'
+        });
+      });
+ */
+
+    </script>    
+</body>
+</html>

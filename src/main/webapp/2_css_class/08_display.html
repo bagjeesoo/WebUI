@@ -1,0 +1,50 @@
+<!-- 
+	display:block			:		 항상 새라인에서 시작하고 옆에 다른 요소 배치 안됨
+											width, height, padding, margin, border 조절 가능
+	display:inline		:		 새라인에서 시작 못하고 옆에 다른 요소와 배치 가능
+											width, height, padding, margin, border 조절 불가능
+	display:inline-block : 	새라인에서 시작 못하고 옆에 다른 요소와 배치 가능
+											width, height, padding, margin, border 조절 가능
+	display:none		: 화면에서 안보이게
+	display:flex		: 유동적인 레이아웃
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>박스의 유형 제어 - display</title>
+
+<style type="text/css">
+
+div>div{
+	/*안쪽여백: 30px, 바깥여백 20px*/
+	padding:30px; margin: 20px; display:inline-block;
+}
+
+div>div:nth-child(2){
+	/* display:none; */		/* 공간 유지 안됨 */
+	/* visibility: hidden; */     /* 공간은 확보 */
+}
+
+hr+div{
+	display: flex;
+	
+	/* flex-direction: row; */
+	/* flex-direction: column; */
+	flex-direction: row-reverse;
+}
+
+</style>
+
+</head>
+<body>
+	<hr />
+	<div style="background: orange">
+		<div><img src='./img/spade-2.png' width='200px' height='300px' /></div> 
+		<div><img src='./img/spade-3.png' width='200px' height='300px' /></div>
+		<div><img src='./img/spade-7.png' width='200px' height='300px' /></div>
+
+	</div>
+
+</body>
+</html>

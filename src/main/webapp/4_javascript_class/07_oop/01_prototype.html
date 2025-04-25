@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title> Javascript 객체지향 </title>
+</head>
+<body>
+<script>
+/* [참고]
+ 	
+ 	1. 함수
+ 		- 선언
+ 				function func(){}
+ 		- 호출
+ 				func();
+ 		
+ 	2. 클래스
+ 		- 선언
+ 				function Student(){} // 과거
+ 		- 객체 생성
+ 				var s = new Student();
+ 		
+ */
+
+//0. 	클래스 선언 -  생성자로 초기화하기
+/* function Student(id, name, dept){
+	this.id = id;
+	this.name = name;
+	this.dept = dept;
+	
+	this.display =function(){
+		var str  = "학번: "+id;
+		str += "/이름:" + name;
+		str += "/학과:" + dept + "<br/>"; 
+		return   str;
+	}
+}
+
+var kim = new Student("001","김길동", "컴공");
+var lee = new Student("002","이길동", "경영");
+
+document.write( kim.display() );
+document.write( lee['display']() ); */
+
+/* kim.showName = function(){  // kim 객체에 showName 함수를 만듦. lee에는 생성안 됨 => 프로토타입 영역에 올려야됨
+				document.write(`이 학생의 이름은 ${this.name}입니다<hr/>`);
+				}
+ */				
+/* Student.prototype.showName = function(){  // 클래스 프로토타입 영역에 올리는 방법
+	document.write(`이 학생의 이름은 ${this.name}입니다<hr/>`);
+	}
+
+kim.showName();
+lee.showName();
+
+console.log(kim); */
+				
+				
+// 1. 객체 리터럴
+let Student = function(id, name, dept){
+	this.id=id;
+	this.name=name;
+	this.dept=dept;
+}
+
+Student.prototype = {
+						display : function(){
+									var str  = "학번: "+this.id;
+									str += "/이름:" + this.name;
+									str += "/학과:" + this.dept + "<br/>"; 
+									return   str;
+								   }
+						,showName : function(){
+										document.write(`이 학생의 이름은 ${this.name}입니다<hr/>`);
+									}
+					}
+var kim = new Student("001","김길동", "컴공");
+var lee = new Student("002","이길동", "경영");
+
+document.write( kim.display() );
+document.write( lee['display']() )
+
+kim.showName();
+lee.showName();
+
+</script>
+</body>
+</html>

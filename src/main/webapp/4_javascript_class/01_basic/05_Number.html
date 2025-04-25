@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> Number 형과 형변환 </title>
+<script type="text/javascript">
+
+
+// 1. 숫자 형식 메소드 
+/* var su = 123.456789;
+document.writeln( su.toExponential(4)  + "<br/>" );	
+document.writeln( su.toFixed(3)  + "<br/>" );	//소수점 3까지 반올림
+document.writeln( su.toFixed(7) + "<br/>" );	//소수점 7까지 반올림
+document.writeln( su.toPrecision(6)  + "<br/>" );	 //정수+소수점 6까지 반올림
+document.writeln( su.toPrecision(10)  + "<br/>" );	 */
+
+//-------------------------------------------------
+// 2. 형변환
+//var n ='0700';
+//var n = 'a700';  // NaN(Not a Number)도 Number의 하나의 값.
+var n = '700.99'; // Number로 형변환 시 잘나옴, parseInt(n)는 소수점 짤림 ->parseFloat(n)으로
+
+document.writeln( Number(n) + '<br/>');    // Number라는 객체이용 형변환
+document.writeln( typeof Number(n) + '<hr/>');
+
+document.writeln( parseFloat(n) + '<br/>');  //parseInt() 함수이용 형변환
+document.writeln( typeof parseFloat(n) + '<hr/>');
+
+//-----------------------------------------
+// 자동형변환
+var v = 123 + '4'; // 숫자 + 문자열 => 문자열
+document.write(v+'<br/>');
+document.write(typeof v+'<br/>'); //string
+
+var v = 123 - '4'; // 숫자 - 문자열 => 숫자
+document.write(v+'<br/>');
+document.write(typeof v+'<br/>'); //number
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

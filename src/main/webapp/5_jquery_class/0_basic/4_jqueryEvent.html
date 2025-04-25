@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery event</title>
+
+<style type="text/css">
+	.bg { background : yellow; }
+	.border { border : 3px dotted red; }	
+</style>
+<script type="text/javascript" src='../lib/jquery-3.7.1.js'></script>
+<script type="text/javascript">
+
+$(function(){
+	
+	$('h1').css('cursor', 'pointer');
+	$('h1').click(function(){
+		
+		let n = $('<li/>').text(new Date());
+		$('ul').append(n);
+	})
+	
+	/* $('ul').find('li').click(function(){
+		 $('#result').text($(this).text());
+	}) */
+	
+	//*************************************
+	// 동적으로 생성된 요소는 기본적인 이벤트가 발생하지 않는다
+	//*************************************
+	
+	$('ul').on('click', 'li', function(){   //정적인 부모요소를 먼저 뽑고 이벤트 시 함수실행
+		$('#result').text($(this).text());
+	})
+	
+	
+	
+	/* $('li').bind('click', function(){  // 윗 코드랑 같음
+		$('#result').text($(this).text());
+	}); */
+	
+	/* $('li').one('click', function(){  // 한번만 눌림
+		$('#result').text($(this).text());
+	}) */
+})
+
+</script>
+
+</head>
+<body>
+	<h1>제이쿼리 이벤트</h1>
+	 <ul>
+		<li>부에노스 아이레스</li>
+		<li>바르셀로나</li>
+		<li>리마</li>
+		<li>라파스</li>
+	 </ul>	
+	<div id="result"></div>
+</body>
+</html>

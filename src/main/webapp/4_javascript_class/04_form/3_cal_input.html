@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 폼 예제 3 </title>
+<script type="text/javascript">
+
+window.onload = function(){
+	let toDate = new Date();
+	frm1.y.value = toDate.getFullYear();
+	frm1.m.value = toDate.getMonth()+1;
+	frm1.d.value = toDate.getDate();
+	
+	
+	document.querySelector('#btn').onclick=function(){
+/* 		let myDate = new Date();
+		myDate.setFullYear(frm1.y.value);
+		myDate.setMonth(frm1.m.value-1);
+		myDate.setDate(frm1.d.value); */
+		
+		var y = frm1.y.value;
+		var m = frm1.m.value;
+		var d = frm1.d.value;
+		
+		var myDate = new Date(`${y}/${m}/${d}`);
+
+		let arrDay = ['일', '월', '화', '수' ,'목', '금','토']
+		frm1.w.value = arrDay[myDate.getDay()];
+		
+	}
+}
+</script>
+</head>
+<body>
+
+<hr><hr>
+
+요일을 알아봅시다. <br>
+
+<form name="frm1">
+	<input type="text" name="y" size=4>년 
+	<input type="text" name="m" size=2>월
+	<input type="text" name="d" size=2>일
+	<input type="button" id='btn' value="☞">
+	<input type="text" name="w" size=4>요일입니다.
+</form>
+
+<hr><hr>
+
+
+</body>
+</html>

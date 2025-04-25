@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 새로 열려진 창 </title>
+<script type="text/javascript">
+
+window.onload=function(){
+	let sel = frm.site;
+	for(let i=0; i<sel.length;i++){ // *******i를 var로 하면 전역변수?
+		sel[i].onclick=function(){
+			//**************팝업이 열어준 애를 컨트롤 할 때 'opener'
+			opener.location.href = this.value;
+		}
+	}
+}
+
+</script>
+</head>
+<body>
+	<form name="frm">
+		<input type="radio" name="site" value='http://www.daum.net'> 다음 <br>
+		<input type="radio" name="site" value='http://www.naver.com' > 네이버 <br>
+		<input type="radio" name="site" value='http://www.nate.com'> 네이트 <br>
+		
+		<hr/>
+		<input type='text' name='temp'>
+		
+	</form>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+window.onload=function(){
+	
+	let pop=window.open('0_popup.html', 'pop', 'width = 400 height=300' );
+	let selOpt = frm.sel;
+	
+	for(let i=0; i<selOpt.length; i++){
+		selOpt[i].onclick=function(){
+			pop.fm.result.value=this.value;
+		}
+	}
+}
+</script>
+</head>
+<body>
+
+<form name=frm>
+
+<select name='sel' size='8'>
+	<option selected>서울시</option>
+	<option selected>인천시</option>
+	<option selected>부산시</option>
+	<option selected>대구시</option>
+</select><br/>
+
+<input type='text' size='12' name='result'/>
+</form>
+ 
+</body>
+</html>

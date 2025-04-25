@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> 이벤트 리스너 연결 </title>
+<script type="text/javascript">
+
+//화면이 로딩될 때(화면이 뜰 때)=문서가 준비될 때
+window.onload = function(){
+	
+	let bbb = document.getElementById('btn');
+	bbb.addEventListener('click', function (){
+		alert('이벤트확인 6');
+	});	
+}
+
+</script>
+ </head>
+ <body>
+	<input type='button' value='눌러'  id='btn' />
+ </body>
+</html>

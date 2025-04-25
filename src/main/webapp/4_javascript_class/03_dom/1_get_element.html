@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DOM에서 노드 검색 방법</title>
+<script type="text/javascript">
+
+  window.onload = function () {
+	  
+	  /* let btn = document.getElementById('btn');
+	  btn.onclick=function(){
+		  
+	  } */
+	  
+	  document.getElementById('btn').onclick = function(){
+		  	
+		  let result=document.getElementById('result');
+		  
+	// 1. ID값으로 노드 얻어오기
+		//let name=document.getElementById('name');
+		//result.innerHTML = '안녕,'+name.value+"님";  // innerHTML 태그안에 글씨넣기
+	
+	// 2. 클래스명으로 노드 얻어오기
+		//let name = document.getElementsByClassName('cname'); // 배열로 넘어옴
+		//result.innerHTML='안녕,'+name[0].value+"님"; //배열로 넘어와서 인덱스로 찾음
+		
+
+	
+	// 3. 태그명으로 노드 얻어오기 
+		/* let inputList = document.getElementsByTagName('input');
+		//alert(inputList.length);
+		for(var i=0; i<inputList.length; i++){
+			if(inputList[i].type=='text' && inputList[i].value==''){
+				alert('각 항목을 입력하세요');
+				return;
+			}
+		} */
+
+	
+		// 4. 현재위치에서 상대적인 관계로 노드 얻어오기
+
+		/* nodeType 프로퍼티의 반환값
+			1 -	요소 노드
+			2 - 속성 노드
+			3 - 텍스트 노드
+			4 - CDATA 섹션
+			5 - 실제참조 노드
+			6 - 셀제선언 노드
+			7 - 처리명령 노드
+			8 - 코멘트 노드
+			9 - 문서 노드
+			10 - 문서형선언 노드
+			11 - 문서의 단편 (fragment)
+			12 - 기법선언 노드
+		*/
+		
+/* 		let me = document.getElementById('label');
+		var childs=me.childNodes;      // 자식태그 찾기
+		alert(childs.length);
+		
+		for(var i=0; i<childs.length;i++){
+			if(childs[i].nodeType===1 && childs[i].value==''){
+				alert(childs[i].name+"는 필수입력입니다.");
+				return;
+			}
+		} */
+		
+		// 5. DOM 구조는 아니지만 폼의 요소를 찾는 방법
+		//let name = document.querySelector('#name'); 
+		/* let name = document.querySelector('.cname'); //querySelectorAll로 해야 배열임
+		result.innerHTML="안녕,"+name.value+"님"; */
+		
+		let name = document.querySelectorAll('.cname');  // 배열로 받음
+		result.innerHTML="안녕,"+name[0].value+"님";
+		
+	}
+  }
+  </script>
+</head>
+
+<body>
+	<!-- 1 -->
+
+		<div id='label'>
+		 이름 : <input type="text" id="name" 	class="cname" name="name" size="15" />
+		 학과 : <input	type="text" id="dept" name="dept" size="15" /> 
+		 학교 : <input 	type="text" id="univ" name="univ" size="15" />
+		 </div>
+		<input id="btn" type="button" value="버튼" />
+		<div id="result"></div>
+
+</body>
+</html>

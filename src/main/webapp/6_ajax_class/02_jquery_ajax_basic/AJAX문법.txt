@@ -1,0 +1,17 @@
+
+
+AJAX -> 서버에 비동기방식으로 요청
+
+
+ 	$.ajax({
+ 		type : 'get/post'
+ 		, data : 보내는데이타
+ 		, url : '요청페이지'
+ 		, dataType : 받는 데이타타입(text/xml/html/json)
+ 	}).done(function(result){
+ 		// 성공시
+ 		
+ 	}).fail(function(err){
+ 		// 실패시
+ 		
+ 	});

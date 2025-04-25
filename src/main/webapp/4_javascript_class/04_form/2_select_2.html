@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 폼 예제 2</title>
+</head>
+<script type="text/javascript">
+
+window.onload = function(){
+	//up 버튼 눌렸을 때
+	document.querySelector('#up').onclick = function(){
+		
+		let idx = frm.play.selectedIndex; //선택된 인덱스
+		//console.log(idx);
+		
+		var optSel = frm.play.options; // options
+		console.log(idx);
+		if(idx>0 && idx<optSel.length){
+			var temp = optSel[idx].text;
+			//console.log(temp);
+			optSel[idx].text=optSel[idx-1].text;
+			optSel[idx-1].text = temp;
+			optSel[idx-1].selected = true;
+		}else if(idx==0){
+/* 			[optSel[0].text, optSel[5].text]
+				=[optSel[5].text, optSel[0].text]; */
+/* 			let temp1 = optSel[idx].text;
+			console.log(idx);
+			optSel[idx].text=optSel[optSel.length-1].text;
+			optSel[optSel.length-1].text = temp1;
+			optSel[optSel.length-1].selected = true; */
+			
+			for(let i=1; i<optSel.length;i++){
+				var temp11 = optSel[i].text;
+				//console.log(temp);
+				optSel[i].text=optSel[i-1].text;
+				optSel[i-1].text = temp11;
+			}
+			optSel[optSel.length-1].selected = true; 
+				
+		}
+	}
+	
+	//down 버튼 눌렸을 때
+	document.querySelector('#down').onclick = function(){
+		
+		let idx=frm.play.selectedIndex;
+		let optSel = frm.play.options; // 배열
+		
+		if(0<=idx && idx<optSel.length-1){
+			[optSel[idx].text, optSel[idx+1].text]
+			=[optSel[idx+1].text,optSel[idx].text];
+		optSel[idx+1].selected = true;
+		}else if(idx==optSel.length-1){
+			/* [optSel[optSel.length-1], optSel[0]] = [optSel[0], optSel[optSel.length-1]]
+			idx=0 */
+			let temp2 = optSel[optSel.length-1].text;
+			optSel[optSel.length-1].text = optSel[0].text;
+			optSel[0].text=temp2;
+			
+			
+			optSel[0].selected=true; 
+;		}
+		
+
+	}
+}
+
+</script>
+<body>
+
+내가 제일 좋아하는 놀이 순서대로 한다면 <br>
+
+<form name="frm">
+<select name="play" size="8">
+	<option selected> 숨쉬기 </option>
+	<option> 밥먹기 </option>
+	<option> 그냥있기 </option>
+	<option> 잠자기 </option>
+	<option> 술먹기 </option>
+	<option> 멍때리기 </option>
+</select> <br>
+
+<input type="button" id='up'	value="▲"><br><br>
+<input type="button" id='down'	value="▼"><br><br>
+</form>
+
+</body> 
+</html>

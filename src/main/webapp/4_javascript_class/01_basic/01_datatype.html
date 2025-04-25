@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자바스크립트의 자료형</title>
+<script type="text/javascript">
+
+/* 1. 자바스크립트는 데이터타입에 관대하다
+     변수를 선언할 때 데이타타입을 정하지 않는다
+		(1) 변수 선언 : var => 추후에 let/const
+*/
+/* var byensu = '문자열';
+document.write("변수의 값:"+byensu + "<br/>");  // <= 화면을 document라고 한다
+console.log("변수의 값:"+byensu);   //<= 자바스크립트에 대한 확인, f12의 콘솔창에 뜸
+console.log(typeof byensu);
+
+var byensu = 1000;               //var로 변수 중복선언 가능
+document.write("변수의 값:"+byensu + "<br/>");
+console.log("변수의 값:"+byensu);
+console.log(typeof byensu);
+ */
+ 
+/*   (2) let  (es6)
+ 		- 변수의 중복 선언을 허용하지 않는다
+ 		- 블럭 범위(scope)를 인식한다 -> 나중에 확인
+ */
+/* let byensu = '문자열';
+document.write("변수의 값:"+byensu + "<br/>");  // <= 화면을 document라고 한다
+console.log("변수의 값:"+byensu);   //<= 자바스크립트에 대한 확인, f12의 콘솔창에 뜸
+console.log(typeof byensu);
+
+byensu = 1000;               //let은 변수 중복선언 불가(오류남), 다른 값을 넣을 수는 있음 
+document.write("변수의 값:"+byensu + "<br/>");
+console.log("변수의 값:"+byensu);
+console.log(typeof byensu);
+  */
+
+ /* (3) const : 상수선언 (es6)
+	- 값을 재대입 금지
+	- 명명 권장 : 모두 대문자에 단어사이는 _로 표시
+*/
+/* const PI = 3.14;
+//PI = 3.005;              //  상수이기 때문에 변경 불가
+var radius = 5;
+document.write('원주율:'+2*radius*PI+"<hr/>"); */
+
+/* const data=[1,2,3];
+document.write('1. 결과:'+data+'<br/>');
+data=[100,200];      // const이기 때문에 참조형 변수 자체 변경은 불가하다.
+document.write('2. 결과:'+data+'<br/>');
+ */
+ 
+/*  const data=[1,2,3];
+ document.write('1. 결과:'+data+'<br/>');
+ data[1]=1004;    // 참조형 변수(상수)안의 값은 변경 가능하다.
+ document.write('2. 결과:'+data+'<br/>'); */
+
+/*
+ 	[참고] 컴파일 언어 vs 인터프리터 언어
+ 		    c			js
+ 		    java		python
+ */
+ 
+//----------------------------------------------------------------
+// 2. 리터럴 - 변수의 값
+/* var   arr = [ '안녕', 'Hello', 'Hola', '곤니찌와' ];
+document.write(arr[2]+'</br>');
+ 		
+var   arr2 = [ '안녕', [ 'Hello', 'Hola' ], '곤니찌와' ];
+document.write(arr2[1][1]+'<br/>')
+
+var  obj = { x : '안녕',  y : 'Hello' ,  z : '곤니찌와' };
+document.write('객체 프로퍼티:'+obj.y +'<br/>')
+document.write('객체 프로퍼티:'+obj['y'] +'<br/>')  // ★★★ [ ]안에는 문자열로 표시해야함
+
+document.write(obj.a);   //  존재하지 않는 프로퍼티는 undefined(정상구문으로 작동)
+document.write('객체확인 <hr/>') */
+
+
+
+//-------------------------------------------------------
+/* 3. 분할 대입 (destructuring assignment) : (es6)
+ 			- 배열과 객체의 요소를 분할하는 부분
+ 		(1) 배열 분할
+ */
+/*  var data = [10, 20, 30, 40, 50];
+ var a0 = data[0];
+ var a1 = data[1];
+ var a2 = data[2];
+ document.writeln(a0+ a1+ a2 + "<br/>");  
+ console.log(a0, a1, a2 ) */
+ 
+/*  var data = [10, 20, 30, 40, 50];
+ var[a0, a1, a2] = data;      // index 0부터 채워짐
+ document.writeln(a0+ a1+ a2 + "<br/>");  
+ console.log(a0, a1, a2 ) */
+ 
+/*  var data = [10, 20, 30, 40, 50];
+ var[a, b,...c] = data;       // 나머지에 해당하는 부분은 ...변수명
+ document.writeln(a+ "<br/>");  
+ document.writeln(b+ "<br/>");
+ document.writeln(c+ "<br/>"); */
+ 
+/*  let v1 = 100, v2 = 200;
+ [v2, v1] =[v1, v2]   //  변수 두개 값을 맞바꾸기, 임시저장 공간 만들지 않아도 됨
+ document.write('v1:' + v1);
+ console.log('v2:'+v2) */
+ 
+ /*  (2) 객체 분할
+  */
+  let book = {title:"Master book"
+	 		, publish:"ICT"
+	 		, price: 10000};
+ document.write('제목:'+book.title+'<br/>');
+ document.write('가격:'+book.price+'<hr/>'); 
+ document.write('제목:'+book['title']+'<br/>');
+ document.write('가격:'+book['price']+'<hr/>');
+ 
+ let {title, price} = book;    // 이미 낱개에 변수로 지정해서 book.title 안써도됨
+ document.write('제목:'+title+'<br/>');
+ document.write('가격:'+price+'<hr/>'); 
+ 
+ 
+</script>
+</head>
+<body>
+
+</body>
+</html>

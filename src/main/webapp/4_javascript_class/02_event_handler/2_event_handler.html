@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이벤트 핸들러 연결</title>
+
+<script type="text/javascript">
+
+/* window.onload = windowInit;
+	
+function windowInit(){
+let b = document.getElementById('btn');
+	
+	b.onclick = btn_click;  // btn_click() <- 함수호출이라 안됨,,, 연결을 시켜야함
+	
+	function btn_click(){
+		alert('이벤트발생3')
+	}
+} */
+
+window.onload = function (){  // window에 웹 띄울 때
+	let b = document.getElementById('btn');
+	
+	b.onclick = function (){      // 축약형
+		alert('이벤트발생5')
+	};	
+};
+
+
+
+
+
+</script>
+</head>
+<body>
+	<input type='button' value='눌러' id='btn' />
+
+
+
+
+</body>
+</html>

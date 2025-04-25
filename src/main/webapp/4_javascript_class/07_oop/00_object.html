@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>00_object.html</title>
+
+<!-- 
+	객체 리터럴
+	
+	[장점] 별도의 클래스 구조 없이 빠르게 작성하고 구성이 자유롭다
+	
+	[단점] 구조가 없어서 객체의 구조 파악 어렵다
+		  구조가 없어서 재사용이 불가능 
+ -->
+
+<script type="text/javascript">
+
+let obj = {};  // 빈 객체먼저 만들고 멤버 추가 가능
+obj.name = '홍길동';
+obj.age = 33;
+obj.display = function(){
+	document.write(`${this.name}님은 ${this.age}세 입니다. <br/>`);  // this 안쓰면 오류
+}
+
+obj.display();
+
+
+var obj2 = {name:'홍길순',age:44}; // 기존에 멤버가 있어도 obj.display 멤버(함수)를 추가할 수 있다. 
+
+obj2.display = function(){
+	document.write(`${this.name}님은 ${this.age}세 입니다. <br/>`);  // this 안쓰면 오류
+}
+
+obj2.display();
+
+
+var obj3 = {
+		name :'홍길국'
+		,age : 22
+		,display(){  // 멤버함수를 쓸 때,,
+			document.write(`${this.name}님은 ${this.age}세 입니다. <br/>`);
+		}
+}
+obj3.display();
+
+var obj4 = {
+		name :'홍길통'
+		,age : 11
+		,display : function(){  // 멤버함수를 쓸 때
+			document.write(`${this.name}님은 ${this.age}세 입니다. <br/>`);
+		}
+}
+obj4.display();
+obj['display']();
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

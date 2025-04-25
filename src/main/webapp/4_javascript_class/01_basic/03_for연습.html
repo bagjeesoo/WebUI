@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>03_for연습.html</title>
+
+<script type="text/javascript">
+
+document.write('<table border="2">');
+	var data = 1;
+	for(var i=0; i<5; i++){
+		document.write('<tr>');
+		
+		for(var j=0; j<5; j++, data++){
+			document.write(`<td>${data}</td>`);			
+		}
+	
+		document.write('</tr>');
+	}
+	
+document.write('</table>');
+</script>
+</head>
+<body>
+
+</body>
+</html>
